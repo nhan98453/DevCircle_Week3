@@ -8,8 +8,8 @@ export default class App extends React.Component {
 	constructor(props){
 		super(props);
 		this.state={
-			computerChoise:CHOICES[0],
-			playerChoise:CHOICES[1],
+			computerChoice:{},
+			playerChoice:{},
 			result:'Let press button',
 			total:0,
 			win:0,
@@ -18,9 +18,9 @@ export default class App extends React.Component {
 	}
 	
 	onPress = playerChoice => {
-		const [result, computerChoise] = getRoundOutcome(playerChoice);
+		const [result, computerChoice] = getRoundOutcome(playerChoice);
 		this.setState({
-			computerChoise,
+			computerChoice,
 			playerChoice,
 			result,
 			total:this.state.total+1.,
@@ -32,7 +32,7 @@ export default class App extends React.Component {
 		return (
 			<SafeAreaView  style={styles.container}>
 				<Result result={this.state} style={styles.header}/>
-				<Choise style={styles.playArea} playerChoise={this.state.playerChoise} computerChoise={this.state.computerChoise}></Choise>
+				<Choise style={styles.playArea} playerChoice={this.state.playerChoice} computerChoice={this.state.computerChoice}></Choise>
 				<Game onPress={this.onPress} CHOICES={CHOICES} style={styles.choiseArea}/>
 			</SafeAreaView>
 		);

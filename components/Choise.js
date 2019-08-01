@@ -5,14 +5,14 @@ export default function Header(props){
 		<View style={styles.choicesContainer}>
 			<View style={styles.choose}>
 				<Text style={styles.choiceDescription}>You</Text>
-				<Image style={styles.choiceImage}source={{uri:props.playerChoise.uri}}/>
-				<Text style={styles.choiceCardTitle}>{props.playerChoise.name}</Text>
+				<Image style={styles.choiceImage}source={{uri:props.playerChoice.uri}}/>
+				<Text style={styles.choiceCardTitle}>{props.playerChoice.name}</Text>
 			</View>
 			<Text>vs</Text>
 			<View style={styles.choose}>
 				<Text style={styles.choiceDescription}>Computer</Text>
-				<Image style={styles.choiceImage}source={{uri:props.computerChoise.uri}}/>
-				<Text style={styles.choiceCardTitle}>{props.computerChoise.name}</Text>
+				<Image style={styles.choiceImage}source={{uri:props.computerChoice.uri}}/>
+				<Text style={styles.choiceCardTitle}>{props.computerChoice.name}</Text>
 			</View>
 		</View>
 	);
